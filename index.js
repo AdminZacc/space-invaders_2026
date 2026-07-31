@@ -6,6 +6,7 @@ const closeButton = document.getElementById("closeButton");
 const restartButton = document.getElementById("restartButton");
 const finalScoreElement = document.getElementById("finalScore");
 const startButton = document.getElementById("startButton");
+const splashScreen = document.getElementById("splashScreen");
 
 const c = canvas.getContext("2d");
 
@@ -14,7 +15,7 @@ canvas.height = 576;
 let game = { active: false,};
 document.getElementById("startButton").addEventListener("click", () => {
   if (!game.active) {
-    document.getElementById("startButton").style.display = "none";
+    splashScreen.classList.add("is-hidden");
     game.active = true; // Set the game as active when start button is clicked
     animate();
   }

@@ -38,17 +38,141 @@ p {
     font-weight: bold;
   }
   #startButton {
-    background-color: #2ecc71;
-    color: rgb(15, 15, 15);
-    padding: 10px 20px;
-    font-size: 16px;
+    background-color: #f4d35e;
+    color: #111827;
+    padding: 14px 24px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 0;
     cursor: pointer;
-    border: none;
-    margin-top: 20px;
+    border: 2px solid #fff3b0;
+    box-shadow: 4px 4px 0 #e4572e;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+
+  #startButton:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #e4572e;
+  }
+
+  #splashScreen {
+    position: fixed;
+    z-index: 20;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: #080b1c;
+    color: #f8fafc;
+    font-family: "Courier New", monospace;
+    transition: opacity 280ms ease, visibility 280ms ease;
+  }
+
+  #splashScreen::before,
+  #splashScreen::after,
+  .splash-stars {
     position: absolute;
-    transform: translate(-50%, -50%);
-    left: 50%;
-    top: 50%;
+    inset: 0;
+    content: "";
+    background-image: radial-gradient(circle, #fff 1px, transparent 1.5px);
+    background-size: 42px 42px;
+    opacity: 0.45;
+  }
+
+  #splashScreen::after {
+    background-size: 77px 77px;
+    background-position: 22px 31px;
+    opacity: 0.28;
+  }
+
+  .splash-stars {
+    background-size: 113px 113px;
+    background-position: 63px 11px;
+    opacity: 0.18;
+  }
+
+  .splash-content {
+    position: relative;
+    z-index: 1;
+    width: min(480px, calc(100% - 40px));
+    padding: 36px 32px;
+    text-align: center;
+    border: 2px solid #33c3ff;
+    background: rgba(8, 11, 28, 0.9);
+    box-shadow: 8px 8px 0 #e4572e;
+  }
+
+  .splash-kicker {
+    position: static;
+    margin: 0 0 16px;
+    color: #f4d35e;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  #gameTitle {
+    margin: 0;
+    color: #33c3ff;
+    font-size: clamp(42px, 10vw, 72px);
+    letter-spacing: 0;
+    line-height: 0.9;
+    text-transform: uppercase;
+    text-shadow: 4px 4px 0 #e4572e;
+  }
+
+  .splash-intro {
+    position: static;
+    margin: 24px 0 28px;
+    color: #d6e5ef;
+    font-size: 16px;
+  }
+
+  .instructions {
+    display: grid;
+    gap: 12px;
+    margin: 0 0 30px;
+    padding: 20px;
+    border-top: 1px solid rgba(51, 195, 255, 0.55);
+    border-bottom: 1px solid rgba(51, 195, 255, 0.55);
+  }
+
+  .instruction-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 32px;
+    font-size: 14px;
+  }
+
+  .instruction-row span:last-child {
+    margin-left: 8px;
+    color: #d6e5ef;
+  }
+
+  .keycap {
+    display: inline-grid;
+    min-width: 30px;
+    min-height: 30px;
+    place-items: center;
+    padding: 0 6px;
+    color: #111827;
+    background: #f8fafc;
+    border: 1px solid #b7d9e9;
+    box-shadow: 2px 2px 0 #33c3ff;
+    font-weight: bold;
+  }
+
+  .keycap-wide {
+    min-width: 72px;
+  }
+
+  #splashScreen.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
   .hidden {
     display: none;

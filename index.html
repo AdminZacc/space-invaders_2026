@@ -22,7 +22,28 @@
   <canvas id="canvas"></canvas>
   </div>
 
-    <button id="startButton">Start Game</button>
+    <main id="splashScreen" aria-labelledby="gameTitle">
+      <div class="splash-stars" aria-hidden="true"></div>
+      <section class="splash-content">
+        <p class="splash-kicker">Arcade transmission</p>
+        <h1 id="gameTitle">Space Invaders</h1>
+        <p class="splash-intro">Defend the last line of orbit.</p>
+
+        <div class="instructions" aria-label="Game controls">
+          <div class="instruction-row">
+            <span class="keycap">A</span>
+            <span class="keycap">D</span>
+            <span>Move your ship</span>
+          </div>
+          <div class="instruction-row">
+            <span class="keycap keycap-wide">Space</span>
+            <span>Fire lasers</span>
+          </div>
+        </div>
+
+        <button id="startButton" type="button">Begin Mission</button>
+      </section>
+    </main>
 
     <!-- Game Over Modal -->
     <div id="gameOverModal" class="modal">
